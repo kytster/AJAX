@@ -7,7 +7,7 @@ to be continued...
 
 Constructor
     
-..    var Ajax = new AJAX_(DefaultErrorHandler,DefaultParser,DefaultSplashScreen);
+    var Ajax = new AJAX_(DefaultErrorHandler, DefaultParser, DefaultSplashScreen);
 
         where:
         
@@ -39,6 +39,22 @@ Constructor
 Metods
     
    The object has two methods corresponded to HTTP methods GET and POST.
+   
+   .GET(url, Callback, SplashScreen, Parser, ErrorHandler)
+   
+   .POST(url, dat, Callback, SplashScreen, Parser, ErrorHandler)
+   
+        where:
+        
+        url (string) - URL for request according to HTTP specs. Can be absolute or relative.
+        
+        dat (string) - Data for POST request according to HTTP specs (urlencoded).
+        
+        Callback (function, optional) - function which receives control after server response to the request. 
+            The function receives parsed server response. 
+            If the Parser is disabled when the method is called (see below), the function receives raw server 
+            response as string. If omitted, null or false - nothing happens.
+        
    
    
 
