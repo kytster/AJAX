@@ -55,6 +55,11 @@ Metods
             If the Parser is disabled when the method is called (see below), the function receives raw server 
             response as string. If omitted, null or false - nothing happens.
         
+        SplashScreen (function/boolean/any, optional) - allows to redefine or disable DefaultSplashScreen 
+            for particular request.
+            If function - the function is used instead of DefaultSplashScreen.
+            If omitted null or false the DefaultSplashScreen is used.
+            in any other case splash screen is disabled (silent mode).
    
    
 
