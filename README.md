@@ -7,7 +7,7 @@ to be continued...
 
 Constructor
     
-    new AJAX_(DefaultErrorHandler,DefaultParser,DefaultSplashScreen);
+    ttt new AJAX_(DefaultErrorHandler,DefaultParser,DefaultSplashScreen);
 
         where:
         
