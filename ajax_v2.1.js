@@ -2,7 +2,7 @@
 * 	https://github.com/kytster/AJAX										       *
 *************************************************************/
 
-function AJAX_(DefaultErrorHandler,DefaultParser,DefaultFlasher){
+function AJAX_(DefaultErrorHandler,DefaultParser,DefaultSplashScreen){
 	var AJAX_HTTP_Request_=function(clbk,flsh,prsr,errh){
 		var clbk=clbk,flsh=flsh,prsr=prsr,errh=errh;
 		var reqobj=null;
@@ -47,7 +47,7 @@ function AJAX_(DefaultErrorHandler,DefaultParser,DefaultFlasher){
 		this.Ready=true;
 	}
 	var fl=null,cnt=0;
-	this.DefaultFlasher=DefaultFlasher||function(state){
+	this.DefaultSplashScreen=DefaultSplashScreen||function(state){
 		if(!fl){
 			fl=document.createElement('DIV');
 			fl.style.position='absolute';fl.style.zIndex=2000;fl.style.display='none';
@@ -84,9 +84,9 @@ function AJAX_(DefaultErrorHandler,DefaultParser,DefaultFlasher){
 		return d;
 	}
 	this.DefaultErrorHandler=DefaultErrorHandler||function(err){alert(err);}
-	this.sendRequest=function(url,dat,Callback,Flasher,Parser,ErrorHandler,mod){
+	this.sendRequest=function(url,dat,Callback,SplashScreen,Parser,ErrorHandler,mod){
 		var clbk=Callback||function(r){};
-		var flsh=Flasher?(typeof(Flasher)=='function'?Flasher:function(r){}):this.DefaultFlasher;
+		var flsh=SplashScreen?(typeof(SplashScreen)=='function'?SplashScreen:function(r){}):this.DefaultSplashScreen;
 		var prsr=Parser?(typeof(Parser)=='function'?Parser:function(r){return r;}):this.DefaultParser;
 		var errh=this.DefaultErrorHandler;
 		var hfl=5;
@@ -106,10 +106,10 @@ function AJAX_(DefaultErrorHandler,DefaultParser,DefaultFlasher){
 			else req.GET(url);
 		}
 	}
-	this.GET=function(url,Callback,Flasher,Parser,ErrorHandler){
-		this.sendRequest(url,null,Callback,Flasher,Parser,ErrorHandler,false);
+	this.GET=function(url,Callback,SplashScreen,Parser,ErrorHandler){
+		this.sendRequest(url,null,Callback,SplashScreen,Parser,ErrorHandler,false);
 	}
-	this.POST=function(url,dat,Callback,Flasher,Parser,ErrorHandler){
-		this.sendRequest(url,dat,Callback,Flasher,Parser,ErrorHandler,true);
+	this.POST=function(url,dat,Callback,SplashScreen,Parser,ErrorHandler){
+		this.sendRequest(url,dat,Callback,SplashScreen,Parser,ErrorHandler,true);
 	}
 }
