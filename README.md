@@ -7,7 +7,7 @@ to be continued...
 
 Constructor
     
-    var Ajax = new AJAX_(DefaultErrorHandler,DefaultParser,DefaultSplashScreen);
+    new AJAX_(DefaultErrorHandler,DefaultParser,DefaultSplashScreen);
 
         where:
         
