@@ -27,7 +27,7 @@ Constructor
             or somthing alike to the user while waiting responce from server. 
             If omitted, null or false - the built-in splash screen (dimmed layer over the whole window which 
             contained the Ajax object definition) is used. 
-            When is called, the function receives integer representing the current state of connection. 
+            The function receives integer representing the current state of connection, when called,. 
             The recognised states are:
               0 - Initialisation;
               1 - Establising connection;
@@ -58,8 +58,13 @@ Metods
         SplashScreen (function/boolean/any, optional) - allows to redefine or disable DefaultSplashScreen 
             for particular request.
             If function - the function is used instead of DefaultSplashScreen.
-            If omitted null or false the DefaultSplashScreen is used.
+            If omitted null or false - the DefaultSplashScreen is used.
             in any other case splash screen is disabled (silent mode).
-   
+        
+        Parser (function/boolean/any, optional) - allows to redefine or disable DefaultParser for particular 
+            request. If function - the function is used instead of DefaultParser. The function receives raw 
+            server response as string, when called, and should return parsed response which is passed to Callback.
+            If omitted, null or false - the DefaultParser is used.
+            in any other case parsing is switched off, and Callback reseived raw server response as string.
    
 
