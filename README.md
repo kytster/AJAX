@@ -73,6 +73,9 @@ Metods
             If string, beginning with letter 'C' (case insensitive), then dedicated error handlier is 
             disabled and error message is passed to Callback.
             In any other case error handling is disabled.
+            Note! The Сallback should not be called in case of an error. But I came across a situation where 
+                  Callback was called with the "false" as an argument. I believe I fixed it, but I'm not sure. 
+                  Just in case, I advise to check the argument in the Сallback.
             
 Error messages
    
