@@ -72,10 +72,6 @@ function AJAX_(DefaultErrorHandler,DefaultParser,DefaultSplashScreen){
 		}
 	}
 	this.DefaultParser=DefaultParser||function(r,errh){
-		if(r.substr(0,3).toLowerCase()=='err'){
-			errh('AJAX error: server application error. Received: '+r); 
-			return false;
-		}
 		try{var d=eval('('+r+')');}
 		catch(e){
 			errh('AJAX error: wrong response format. Received: '+r);
