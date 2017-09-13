@@ -3,7 +3,6 @@
 Simple AJAX javascript object for use when you do not want (or can not) use any framework or library that has built-in AJAX functionality.
 
 # API
-to be continued...
 
 Constructor
     
@@ -63,8 +62,33 @@ Metods
         
         Parser (function/boolean/any, optional) - allows to redefine or disable DefaultParser for particular 
             request. If function - the function is used instead of DefaultParser. The function receives raw 
-            server response as string, when called, and should return parsed response which is passed to Callback.
-            If omitted, null or false - the DefaultParser is used.
-            in any other case parsing is switched off, and Callback reseived raw server response as string.
+            server response as string, when called, and should return parsed response which is passed to 
+            Callback. If omitted, null or false - the DefaultParser is used.
+            In any other case parsing is switched off, and Callback reseived raw server response as string.
+        
+        ErrorHandler (function/boolean/string, optional) - allows to redefine or disable DefaultErrorHandler 
+            for particular request. If function - the function is used instead of DefaultErrorHandler.
+            The function receives error message as string (see below).
+            If omitted, null or false - the DefaultErrorHandler is used.
+            If string, beginning with letter 'C' (case insensitive), then dedicated error handlier is 
+            disabled and error message is passed to Callback.
+            In any other case error handling is disabled.
+            
+Error messages
    
+   Following error messages are provided.
+        
+        Connection errors:
+        
+                AJAX error: XMLHttpRequest not supported. 
+                AJAX error: can not create XMLHttpRequest object.
+                AJAX error: no response from server.
+                AJAX error: data transmission fault. Received: <error message received>
+                AJAX error: can not open connection. Received: <error message received>
+                AJAX error: can not send data. Received: <error message received>
+                
+        Parser error:
+        
+                AJAX error: wrong response format. Received: <message received from server in raw format>
+        
 
