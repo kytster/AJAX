@@ -19,13 +19,13 @@ Constructor
             message before transferring the message to the callback function.  
             If omitted, null or false - the built-in parser is used. The built-in parser treats server message 
             as JSON string and tries to restore (unserialise) an object or array from the string. 
-            Restored object is passed then to the callback function. If unserialization fails the error handler
+            Restored object is passed to the callback function then. If unserialization fails the error handler
             is called with appropriate error message and the parser returns false.
         
         DefaultSplashScreen (function, optional) - defines a function for showing a splash screen or animation 
             or somthing alike to the user while waiting responce from server. 
             If omitted, null or false - the built-in splash screen (dimmed layer over the whole window which 
-            contained the Ajax object definition) is used. 
+            contains the Ajax object definition) is used. 
             The function receives integer representing the current state of connection, when called,. 
             The recognised states are:
               0 - Initialisation;
